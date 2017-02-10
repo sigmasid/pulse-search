@@ -62,9 +62,21 @@ else {
 exports.paths = [
   {
     path  : "tags",
-    index : "firebase",
+    index : "tags",
     type  : "tags",
-    fields: ['title']
+    fields: ['title','description']
+  },
+  {
+    path  : "questions",
+    index : "questions",
+    type  : "questions",
+    fields: ['title'],
+  },
+  {
+    path  : "userPublicSummary",
+    index : "firebase",
+    type  : "users",
+    fields: ['name','shortBio','thumbPic']
     // see readme
     //, parser: function(data) { data.msg = data.msg.toLowerCase(); return data; }
     // see readme

@@ -14,4 +14,4 @@
 # [START search_yaml]
 runtime: nodejs
 env: flex
-service: search_v1
+service: pulse-search

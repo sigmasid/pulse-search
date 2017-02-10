@@ -35,8 +35,6 @@ var esc = new elasticsearch.Client({
   log: 'trace'
 });
 
-console.log('Connecting to ElasticSearch host %s:%s'.grey, conf.ES_HOST, conf.ES_PORT);
-
 var timeoutObj = setInterval(function() {
   esc.ping()
     .then(function() {
@@ -47,7 +45,6 @@ var timeoutObj = setInterval(function() {
 }, 5000);
 
 function initFlashlight() {
-  console.log('Connecting to Firebase %s'.grey, conf.FB_URL);
   fbutil.init(conf.FB_URL, conf.FB_SERVICEACCOUNT);
   PathMonitor.process(esc, conf.paths, conf.FB_PATH);
   SearchQueue.init(esc, conf.FB_REQ, conf.FB_RES, conf.CLEANUP_INTERVAL);
